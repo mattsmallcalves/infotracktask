@@ -18,6 +18,7 @@ import {
   ListGroupItem
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import Navbar from "../component/Navbar/SimpleNavBar.js";
 
 function SearchForm() {
   const [keyword, setKeyword] = useState('land registry searches');
@@ -63,6 +64,9 @@ function SearchForm() {
   };
 
   return (
+    <div className="App">
+    <Navbar/>
+    <div className="App-header">
     <Container>
       <Row>
         <Col md={6} className="text-left">
@@ -140,6 +144,8 @@ function SearchForm() {
         </Col>
       </Row>
     </Container>
+    </div>
+    </div>
   );
 }
 
