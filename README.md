@@ -6,4 +6,4 @@
 <li>SQL Express uses SSMS to store dummy data, for complete experience, please make sure SSMS and SQL Express are installed.</li></ul>
 <h2>Set-up</h2>
 <h4>Node.js and npm</h4>
-<p>Please proceed to install node.js and npm in the following link: <a>https://nodejs.org/en/download/prebuilt-installer</a></p>
+<p>Please proceed to install node.js and npm in the following link: <a href="https://nodejs.org/en/download/prebuilt-installer">https://nodejs.org/en/download/prebuilt-installer</a></p>
