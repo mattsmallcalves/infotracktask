@@ -1,0 +1,297 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "infotrackbe/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "8.0.4",
+          "Newtonsoft.Json": "13.0.3",
+          "Swashbuckle.AspNetCore": "6.7.1",
+          "Moq": "4.20.70",
+          "xunit": "2.9.0"
+        },
+        "runtime": {
+          "infotrackbe.dll": {}
+        }
+      },
+      "Castle.Core/5.1.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.1.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/8.0.4": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.6.14"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "8.0.4.0",
+            "fileVersion": "8.0.424.17014"
+          }
+        }
+      },
+      "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
+      "Microsoft.OpenApi/1.6.14": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.6.14.0",
+            "fileVersion": "1.6.14.0"
+          }
+        }
+      },
+      "Moq/4.20.70": {
+        "dependencies": {
+          "Castle.Core": "5.1.1"
+        },
+        "runtime": {
+          "lib/net6.0/Moq.dll": {
+            "assemblyVersion": "4.20.70.0",
+            "fileVersion": "4.20.70.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore/6.7.1": {
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
+          "Swashbuckle.AspNetCore.Swagger": "6.7.1",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.7.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.7.1"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/6.7.1": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.6.14"
+        },
+        "runtime": {
+          "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "6.7.1.0",
+            "fileVersion": "6.7.1.644"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/6.7.1": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "6.7.1"
+        },
+        "runtime": {
+          "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "6.7.1.0",
+            "fileVersion": "6.7.1.644"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/6.7.1": {
+        "runtime": {
+          "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "6.7.1.0",
+            "fileVersion": "6.7.1.644"
+          }
+        }
+      },
+      "System.Diagnostics.EventLog/6.0.0": {},
+      "xunit/2.9.0": {
+        "dependencies": {
+          "xunit.analyzers": "1.15.0",
+          "xunit.assert": "2.9.0",
+          "xunit.core": "2.9.0"
+        }
+      },
+      "xunit.abstractions/2.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "xunit.analyzers/1.15.0": {},
+      "xunit.assert/2.9.0": {
+        "runtime": {
+          "lib/net6.0/xunit.assert.dll": {
+            "assemblyVersion": "2.9.0.0",
+            "fileVersion": "2.9.0.0"
+          }
+        }
+      },
+      "xunit.core/2.9.0": {
+        "dependencies": {
+          "xunit.extensibility.core": "2.9.0",
+          "xunit.extensibility.execution": "2.9.0"
+        }
+      },
+      "xunit.extensibility.core/2.9.0": {
+        "dependencies": {
+          "xunit.abstractions": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.core.dll": {
+            "assemblyVersion": "2.9.0.0",
+            "fileVersion": "2.9.0.0"
+          }
+        }
+      },
+      "xunit.extensibility.execution/2.9.0": {
+        "dependencies": {
+          "xunit.extensibility.core": "2.9.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.execution.dotnet.dll": {
+            "assemblyVersion": "2.9.0.0",
+            "fileVersion": "2.9.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "infotrackbe/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Castle.Core/5.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "path": "castle.core/5.1.1",
+      "hashPath": "castle.core.5.1.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.OpenApi/8.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TFiXbP0tqRgJKcpiCSSp79q6QaiF8gqRhZgrU48FQajhVkiwHSp1O1b1hkYC4Ehl4clbk3pHwdfwN9mRtDAFbQ==",
+      "path": "microsoft.aspnetcore.openapi/8.0.4",
+      "hashPath": "microsoft.aspnetcore.openapi.8.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
+      "path": "microsoft.extensions.apidescription.server/6.0.5",
+      "hashPath": "microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/1.6.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tTaBT8qjk3xINfESyOPE2rIellPvB7qpVqiWiyA/lACVvz+xOGiXhFUfohcx82NLbi5avzLW0lx+s6oAqQijfw==",
+      "path": "microsoft.openapi/1.6.14",
+      "hashPath": "microsoft.openapi.1.6.14.nupkg.sha512"
+    },
+    "Moq/4.20.70": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4rNnAwdpXJBuxqrOCzCyICXHSImOTRktCgCWXWykuF1qwoIsVvEnR7PjbMk/eLOxWvhmj5Kwt+kDV3RGUYcNwg==",
+      "path": "moq/4.20.70",
+      "hashPath": "moq.4.20.70.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/6.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vLyorZI4TXvKlzC6uEMI9zXBe98wEBEu43wjpUayhqccFggryX94e+2iUjLtQFFDdDyx4f5xtF3afhRmOfQOdg==",
+      "path": "swashbuckle.aspnetcore/6.7.1",
+      "hashPath": "swashbuckle.aspnetcore.6.7.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/6.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+inGEUziCH4qoAOnWxLYX+4ZjBTAj+Y74acJ5akLcPgNzk/qGHwQvt6nZq8Bgb3XmhsxDNMCIACc7iMbuG/h9Q==",
+      "path": "swashbuckle.aspnetcore.swagger/6.7.1",
+      "hashPath": "swashbuckle.aspnetcore.swagger.6.7.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/6.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iMtGuSAtzpvnLaqiqvPy453XaweX6hkTTY0ZXUvpkRNk++7fOBAFXX3/39kJ4F79qoRAd5XX8MXXBd0oic7N5Q==",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.7.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.6.7.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/6.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aJ/UfnrODbj/S3FDAnVQ7qz2txj7OcIXGu7ViXsi3bu3xMzhMcizVrH7T+utB2yWcPMBp0VMfc1nwRh77Ct1HQ==",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.7.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.6.7.1.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "hashPath": "system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+    },
+    "xunit/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PtU3rZ0ThdmdJqTbK7GkgFf6iBaCR6Q0uvJHznID+XEYk2v6O/b7sRxqnbi3B2gRDXxjTqMkVNayzwsqsFUxRw==",
+      "path": "xunit/2.9.0",
+      "hashPath": "xunit.2.9.0.nupkg.sha512"
+    },
+    "xunit.abstractions/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
+      "path": "xunit.abstractions/2.0.3",
+      "hashPath": "xunit.abstractions.2.0.3.nupkg.sha512"
+    },
+    "xunit.analyzers/1.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s+M8K/Rtlgr6CmD7AYQKrNTvT5sh0l0ZKDoZ3Z/ExhlIwfV9mGAMR4f7KqIB7SSK7ZOhqDTgTUMYPmKfmvWUWQ==",
+      "path": "xunit.analyzers/1.15.0",
+      "hashPath": "xunit.analyzers.1.15.0.nupkg.sha512"
+    },
+    "xunit.assert/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z/1pyia//860wEYTKn6Q5dmgikJdRjgE4t5AoxJkK8oTmidzPLEPG574kmm7LFkMLbH6Frwmgb750kcyR+hwoA==",
+      "path": "xunit.assert/2.9.0",
+      "hashPath": "xunit.assert.2.9.0.nupkg.sha512"
+    },
+    "xunit.core/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uRaop9tZsZMCaUS4AfbSPGYHtvywWnm8XXFNUqII7ShWyDBgdchY6gyDNgO4AK1Lv/1NNW61Zq63CsDV6oH6Jg==",
+      "path": "xunit.core/2.9.0",
+      "hashPath": "xunit.core.2.9.0.nupkg.sha512"
+    },
+    "xunit.extensibility.core/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zjDEUSxsr6UNij4gIwCgMqQox+oLDPRZ+mubwWLci+SssPBFQD1xeRR4SvgBuXqbE0QXCJ/STVTp+lxiB5NLVA==",
+      "path": "xunit.extensibility.core/2.9.0",
+      "hashPath": "xunit.extensibility.core.2.9.0.nupkg.sha512"
+    },
+    "xunit.extensibility.execution/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5ZTQZvmPLlBw6QzCOwM0KnMsZw6eGjbmC176QHZlcbQoMhGIeGcYzYwn5w9yXxf+4phtplMuVqTpTbFDQh2bqQ==",
+      "path": "xunit.extensibility.execution/2.9.0",
+      "hashPath": "xunit.extensibility.execution.2.9.0.nupkg.sha512"
+    }
+  }
+}
