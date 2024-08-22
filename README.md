@@ -39,6 +39,7 @@
 <img src="assets/img/Result2.png" width="750" />
 <p>If it returns with ranking(s), the results will be shown in the grid on the right.</p>
 <p>If the targeted website cannot be found in the searching in search engine, it will return "No Results To Display".</p>
+<p>Both successful results would be stored in the database, and would be presented in the table grid below.</p>
 <img src="assets/img/Cookie.png" width="750" />
 <p>Google has a strict access to automatically calling their url, fequent attempt would result to not being able to return any data. In that case, the result box would display "Cannot get data due to cookie restriction from Google".</p>
 <h4>SEO history</h4>
