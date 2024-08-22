@@ -10,15 +10,11 @@ namespace infotrackbe.Services
             List<string> results = new List<string>();
             var regexList = BuildRegex(searchEngine, url);
             
-            //var googleClassRegex = new Regex(@"<div\b[^>]*>.*?<h3\b[^>]*>.*?<\/h3>.*?<a\b[^>]*>.*?<\/a>.*?<\/div>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
-            //var googleKeywordRegex = new Regex(@"href="".*?"+url, RegexOptions.Singleline | RegexOptions.IgnoreCase);
             var matchCollection = regexList[0].Matches(htmlContent); 
-           // var matchCollection = googleClassRegex.Matches(htmlContent); 
             int pos = 0;
             foreach (Match match in matchCollection)
             {
                 var divContent = match.Value;
-            //    var matchKeyword = googleKeywordRegex.Match(divContent);
                 var matchKeyword = regexList[1].Match(divContent);
                 if (matchKeyword.Success)
                 {
@@ -48,7 +44,6 @@ namespace infotrackbe.Services
             {
                 case "Google":
                     var googleClassRegex = new Regex(@"<div\b[^>]*>.*?<h3\b[^>]*>.*?<\/h3>.*?<a\b[^>]*>.*?<\/a>.*?<\/div>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
-                    //var googleKeywordRegex = new Regex(@"<a\b[^>]*href\s*=\s*['""][^'""]*https:\/\/www\."+url, RegexOptions.Singleline | RegexOptions.IgnoreCase);
                     var googleKeywordRegex = new Regex(@""+url, RegexOptions.Singleline | RegexOptions.IgnoreCase);
                     return [googleClassRegex, googleKeywordRegex];
                 case "Bing":

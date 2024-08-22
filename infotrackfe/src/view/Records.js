@@ -11,12 +11,11 @@ import {
   Legend,
   TimeScale
 } from 'chart.js';
-import 'chartjs-adapter-date-fns'; // For date handling
+import 'chartjs-adapter-date-fns'; 
 import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Table } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from "../component/Navbar/SimpleNavBar.js";
 
-// Registering Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -25,7 +24,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  TimeScale // Register the time scale
+  TimeScale 
 );
 
 function Records() {
@@ -37,37 +36,34 @@ function Records() {
     datasets: []
   });
   const [tableData, setTableData] = useState([]);
-  const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
+  const [sortOrder, setSortOrder] = useState('asc'); 
 
   useEffect(() => {
-    fetch('http://localhost:5205/history') // Replace with your actual API endpoint
+    fetch('http://localhost:5205/history')
       .then(response => response.json())
       .then(data => {
-        // Process and format data
         const formattedData = data.map(item => {
           const date = new Date(item.CreatedDate);
           const position = item.Positions.split(',').map(Number).filter(num => !isNaN(num));
           return {
             ...item,
-            CreatedDate: isNaN(date.getTime()) ? null : date.toISOString(), // Handle invalid dates
+            CreatedDate: isNaN(date.getTime()) ? null : date.toISOString(),
             Position: position.length ? Math.min(...position) : null
           };
-        }).filter(item => item.CreatedDate !== null && item.Position !== null); // Filter out invalid dates or positions
+        }).filter(item => item.CreatedDate !== null && item.Position !== null);
 
         setAllData(formattedData);
         setTableData(formattedData);
       })
       .catch(error => console.error('Error fetching data:', error));
-  }, []); // Empty dependency array to run once on component mount
+  }, []);
 
   useEffect(() => {
-    // Apply filters for graph
     const filteredData = allData
       .filter(item => item.Keyword === 'land registry searches' &&
                       item.Url === 'infotrack.co.uk' &&
                       item.Display === 1);
 
-    // Prepare datasets for graph
     const datasets = [];
     const datePositionMap = new Map();
 
@@ -81,9 +77,6 @@ function Records() {
 
     const labels = Array.from(datePositionMap.keys()).sort((a, b) => new Date(a) - new Date(b));
 
-    console.log('Sorted Labels:', labels); // Log labels for debugging
-
-    // Group data by search engine
     const engines = [...new Set(filteredData.map(item => item.SearchEngine))];
 
     engines.forEach(engine => {
@@ -96,29 +89,23 @@ function Records() {
         const dataset = {
           label: engine,
           data: positions,
-          borderColor: engine === 'Google' ? 'rgba(75,192,192,1)' : 'rgba(255,99,132,1)', // Different color for each engine
-          backgroundColor: engine === 'Google' ? 'rgba(75,192,192,0.2)' : 'rgba(255,99,132,0.2)', // Different color for each engine
+          borderColor: engine === 'Google' ? 'rgba(75,192,192,1)' : 'rgba(255,99,132,1)', 
+          backgroundColor: engine === 'Google' ? 'rgba(75,192,192,0.2)' : 'rgba(255,99,132,0.2)', 
           fill: true,
         };
-
-        console.log(`Dataset for ${engine}:`, dataset); // Log dataset for debugging
 
         datasets.push(dataset);
       }
     });
 
-    console.log('Final datasets with dates:', datasets);
-
     setFilteredGraphData({
-      labels: labels.map(date => new Date(date)), // Convert back to Date objects
+      labels: labels.map(date => new Date(date)),
       datasets: datasets
     });
   }, [selectedEngine, allData]);
 
-  // Toggle dropdown visibility
   const toggleDropdown = () => setDropdownOpen(prevState => !prevState);
 
-  // Sort table data
   const sortDataByDate = () => {
     const sortedData = [...tableData].sort((a, b) => {
       const dateA = new Date(a.CreatedDate);
@@ -129,10 +116,9 @@ function Records() {
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
 
-  // Format date for display
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
-    return isNaN(date.getTime()) ? 'Invalid Date' : date.toLocaleString(); // Handle invalid dates
+    return isNaN(date.getTime()) ? 'Invalid Date' : date.toLocaleString();
   };
 
   return (
@@ -164,11 +150,9 @@ function Records() {
                     tooltip: {
                       callbacks: {
                         label: function (context) {
-                          // Display only the position
                           return `Position: ${context.raw}`;
                         },
-                        title: function (context) {
-                          // Hide date in tooltip title
+                        title: function () {
                           return '';
                         }
                       },
@@ -179,7 +163,7 @@ function Records() {
                       type: 'time',
                       time: {
                         unit: 'day',
-                        tooltipFormat: 'dd/MM/yyyy', // Ensure this is a valid format
+                        tooltipFormat: 'dd/MM/yyyy', 
                       },
                       title: {
                         display: true,
@@ -187,7 +171,7 @@ function Records() {
                       },
                       ticks: {
                         autoSkip: true,
-                        maxTicksLimit: 10, // Adjust this to avoid clutter
+                        maxTicksLimit: 10, 
                       },
                     },
                     y: {
@@ -197,7 +181,7 @@ function Records() {
                       },
                       suggestedMin: 1,
                       suggestedMax: 100,
-                      reverse: true, // Flip the y-axis
+                      reverse: true,
                     },
                   },
                 }}
