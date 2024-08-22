@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yr9acioKNKD0B2Lilg1aUhLB3pu2Wi/aKhBIzK/ZQQrncWlNliztdyoj6GtUqxFKjhjblwLN/USaiT8bhnO85Q==",
+  "dgSpecHash": "xs3x5+PXv6r19zb6woKTIILYv+yo+bCC6d0F+2jkFIaYxB+IjVOeZnRm/j8bff9CWb9KUnO6YRUUgSo1qcg8TA==",
   "success": true,
-  "projectFilePath": "/Users/main/Public/InfoTrack/infotrackbe/infotrackbe.csproj",
+  "projectFilePath": "/Users/main/Public/InfoTrackTask/infotrackbe/infotrackbe.csproj",
   "expectedPackageFiles": [
     "/Users/main/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/main/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

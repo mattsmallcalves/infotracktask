@@ -20,11 +20,6 @@ namespace infotrackbe.Services
             return await _unitOfWork.HistoryRepository.GetAllHistoriesAsync();
         }
 
-        public async Task<History> GetHistoryByIdAsync(Guid id)
-        {
-            return await _unitOfWork.HistoryRepository.GetHistoryByIdAsync(id);
-        }
-
         public async Task AddHistoryAsync(History history)
         {
             await _unitOfWork.HistoryRepository.AddHistoryAsync(history);

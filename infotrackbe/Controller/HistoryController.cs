@@ -25,18 +25,7 @@ namespace infotrackbe.Controllers
             return await _historyService.GetAllHistoriesAsync();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<History>> Get(Guid id)
-        {
-            var history = await _historyService.GetHistoryByIdAsync(id);
-
-            if (history == null)
-            {
-                return NotFound();
-            }
-
-            return history;
-        }
+        
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] HistoryRequestModel model)

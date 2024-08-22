@@ -20,11 +20,6 @@ namespace infotrackbe.Infrastructure.Repositories
             return await _context.Histories.ToListAsync();
         }
 
-        public async Task<History> GetHistoryByIdAsync(Guid id)
-        {
-            return await _context.Histories.FindAsync(id);
-        }
-
         public async Task AddHistoryAsync(History history)
         {
             await _context.Histories.AddAsync(history);

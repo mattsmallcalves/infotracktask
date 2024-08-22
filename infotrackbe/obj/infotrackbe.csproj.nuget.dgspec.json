@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/main/Public/InfoTrack/infotrackbe/infotrackbe.csproj": {}
+    "/Users/main/Public/InfoTrackTask/infotrackbe/infotrackbe.csproj": {}
   },
   "projects": {
-    "/Users/main/Public/InfoTrack/infotrackbe/infotrackbe.csproj": {
+    "/Users/main/Public/InfoTrackTask/infotrackbe/infotrackbe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/main/Public/InfoTrack/infotrackbe/infotrackbe.csproj",
+        "projectUniqueName": "/Users/main/Public/InfoTrackTask/infotrackbe/infotrackbe.csproj",
         "projectName": "infotrackbe",
-        "projectPath": "/Users/main/Public/InfoTrack/infotrackbe/infotrackbe.csproj",
+        "projectPath": "/Users/main/Public/InfoTrackTask/infotrackbe/infotrackbe.csproj",
         "packagesPath": "/Users/main/.nuget/packages/",
-        "outputPath": "/Users/main/Public/InfoTrack/infotrackbe/obj/",
+        "outputPath": "/Users/main/Public/InfoTrackTask/infotrackbe/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/main/.nuget/NuGet/NuGet.Config"

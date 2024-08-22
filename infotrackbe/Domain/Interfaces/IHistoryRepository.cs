@@ -8,7 +8,6 @@ namespace infotrackbe.Domain.Interfaces
     public interface IHistoryRepository
     {
         Task<IEnumerable<History>> GetAllHistoriesAsync();
-        Task<History> GetHistoryByIdAsync(Guid id);
         Task AddHistoryAsync(History history);
     }
 }
