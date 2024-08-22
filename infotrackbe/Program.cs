@@ -4,11 +4,22 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using infotrackbe.Services;
 using infotrackbe.Services.Interfaces;
+using infotrackbe.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using infotrackbe.Infrastructure;
+using infotrackbe.Infrastructure.Repositories;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient<IScraper, Scraper>();
 builder.Services.AddSingleton<HtmlParser>();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IHistoryRepository, HistoryRepository>();
+builder.Services.AddScoped<IHistoryService, HistoryService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

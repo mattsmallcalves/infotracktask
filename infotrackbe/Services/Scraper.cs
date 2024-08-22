@@ -17,20 +17,22 @@ namespace infotrackbe.Services
             _htmlParser = htmlParser;
         }
 
-        public async Task<string> ScrapeGoogleResults(string keyword, string searchEngine)
+        public async Task<string> ScrapeResults(string keyword, string searchEngine)
         {
             var url = BuildSearchUrl(keyword, searchEngine);
-            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent",
+            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(" ",
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36");
             _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accept",
                 "*/*");
             _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Language",
                 "en-US,en;q=0.9");
+                _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Set-Cookie",
+                "CONSENT=PENDING+944");
 
             var response = await _httpClient.GetStringAsync(url);
             return response;
         }
-
+        
         private string BuildSearchUrl(string keyword, string searchEngine)
         {
             switch (searchEngine)
@@ -38,21 +40,20 @@ namespace infotrackbe.Services
                 case "Google":
                     return $"https://www.google.co.uk/search?num=100&q={Uri.EscapeDataString(keyword)}";
                 case "Bing":
-                    
-                    throw new NotImplementedException("Bing search is not implemented yet.");
+                    return $"https://www.bing.com//search?q={Uri.EscapeDataString(keyword)}";
                 default:
                     throw new ArgumentException("Unsupported search engine.");
             }
         }
 
-        public List<string> GetKeywordPositions(string htmlContent, string keyword)
+        public List<string> GetKeywordPositions(string htmlContent, string keyword, string searchEngine)
         {
-            return _htmlParser.GetKeywordPositions(htmlContent, keyword);
+            return _htmlParser.GetKeywordPositions(htmlContent, keyword, searchEngine);
         }
-
-        public List<string> GetKeywordDivs(string htmlContent, string keyword)
+          public bool CheckCookiesBlock(string htmlContent)
         {
-            return _htmlParser.GetKeywordDivs(htmlContent, keyword);
+            return _htmlParser.CheckCookiesBlock(htmlContent);
         }
+      
     }
 }
