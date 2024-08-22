@@ -9,4 +9,4 @@
 <h4>Node.js and npm</h4>
 <p>Please proceed to install node.js and npm in the following link: <a href="https://nodejs.org/en/download/prebuilt-installer">https://nodejs.org/en/download/prebuilt-installer</a></p>
 <p>After installing node.js and npm, and cloning the project, open terminal and locate the directory: infotrackfe </p>
-![alt text](https://github.com/mattsmallcalves/infotracktask/blob/main/assets/img/react1.png)?raw=true)
+![react1](https://github.com/user-attachments/assets/bd0e90d4-ca7e-4964-bbc6-2c5d4e057ec2)
