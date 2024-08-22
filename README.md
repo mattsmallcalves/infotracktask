@@ -45,5 +45,5 @@
 <p>The history tab could be accessed on the navbar, click Records in the navbar.</p>
 <p>2 sections would be shown in the record page: history graph and history table.</p>
 <img src="assets/img/Graph.png" width="750" />
-<p></p>
+<p>The graph shows the records of historical data in the database, it shows the daily positions of the website "infotrack.co.uk" when the keyword "land registry searches" are searched in both Google and Bing. Ideally, when the API program keeps running, it will scedule itself to get the figures and insert them into the database daily, for now it is using dummy data from the database to present. User can choose to view only one line by choosing the options in the dropdown list, or by clicking the coloured rectangle to remove the line.</p>
 <img src="assets/img/Grid.png" width="750" />
