@@ -54,7 +54,6 @@ function SearchForm() {
       }
 
       const data = await response.json();
-      console.log(data);
       if(data.jsonReturnModel.Result==='Success'){
         if(data.jsonReturnModel.Content==='Cannot get data due to cookies restriction from Google'){
           setResultsMessage(data.jsonReturnModel.Content);
