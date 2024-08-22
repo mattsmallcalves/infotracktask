@@ -28,7 +28,7 @@ ChartJS.register(
   TimeScale
 );
 
-function Records() {
+function History() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedEngine, setSelectedEngine] = useState('All');
   const [allData, setAllData] = useState([]);
@@ -157,4 +157,4 @@ function Records() {
   );
 }
 
-export default Records;
+export default History;

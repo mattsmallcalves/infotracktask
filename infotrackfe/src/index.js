@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SearchForm from "./view/Search.js";
-import RecordForm from "./view/Records.js";
+import RecordForm from "./view/History.js";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render( <BrowserRouter>
