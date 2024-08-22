@@ -26,6 +26,7 @@ function SearchForm() {
   const [searchEngine, setSearchEngine] = useState('Google');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [results, setResults] = useState([]);
+  const [resultsMessage, setResultsMessage] = useState([]);
 
   const toggleDropdown = () => setDropdownOpen((prevState) => !prevState);
 
@@ -40,7 +41,7 @@ function SearchForm() {
 
     try {
 
-      const response = await fetch('http://localhost:5205/get/scrap', {
+      const response = await fetch('http://localhost:5205/scrap', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,8 +54,14 @@ function SearchForm() {
       }
 
       const data = await response.json();
-
+      console.log(data);
       if(data.jsonReturnModel.Result==='Success'){
+        if(data.jsonReturnModel.Content==='Cannot get data due to cookies restriction from Google'){
+          setResultsMessage(data.jsonReturnModel.Content);
+        }
+        else{
+          setResultsMessage('No results to display');
+        }
       setResults(data.positions);
       }
     } catch (error) {
@@ -137,7 +144,7 @@ function SearchForm() {
                   </ListGroupItem>
                 ))
               ) : (
-                <ListGroupItem>No results to display</ListGroupItem>
+                <ListGroupItem>{resultsMessage}</ListGroupItem>
               )}
             </ListGroup>
           </Card>
