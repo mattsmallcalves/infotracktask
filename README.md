@@ -25,7 +25,7 @@
 </p>
 <p>  "DefaultConnection": "Server=tcp:127.0.0.1,1433;Database=InfoTrack;User Id=SA;Password=reallyStrongPwd123;Persist Security Info=False;Encrypt=False;"</p>
 <p>Connection string is not encrypted, and there is no user id assignation for database access. This set-up is only for development purpose.</p>
-<p>Database set-up script could be found in the file infotrackdatabase/DataBase.sql, execute the script and the following will be created:
+<p>Database set-up script could be found in the file infotrackbe/infotrackdatabase/DataBase.sql, execute the script and the following will be created:
 <ul><li>Database: InfoTrack</li>
 <li>Table: sysHistory</li>
 <li>Dummy Data for testing</li></ul></p>
@@ -46,5 +46,6 @@
 <p>The history tab could be accessed on the navbar, click Records in the navbar.</p>
 <p>2 sections would be shown in the record page: history graph and history table.</p>
 <img src="assets/img/Graph.png" width="750" />
-<p>The graph shows the records of historical data in the database, it shows the daily positions of the website "infotrack.co.uk" when the keyword "land registry searches" are searched in both Google and Bing. Ideally, when the API program keeps running, it will scedule itself to get the figures and insert them into the database daily, for now it is using dummy data from the database to present. User can choose to view only one line by choosing the options in the dropdown list, or by clicking the coloured rectangle to remove the line.</p>
+<p>The graph shows the records of historical data in the database, it shows the daily positions of the website "infotrack.co.uk" when the keyword "land registry searches" are searched in both Google and Bing. Ideally, when the API program keeps running, a schedule task could set on both Windows or macOS environment to trigger the automation API call so that the system can get the figures and insert them into the database daily, for now it is using dummy data from the database to present. Only auto-inserted data or dummy data could be presented on the graph, data that was created by user triggering, would not be included in the graph. User can choose to view only one line by choosing the options in the dropdown list, or by clicking the coloured rectangle to remove the line.</p>
 <img src="assets/img/Grid.png" width="750" />
+<p>Every successfully retrieved data are stored in the table grid, the button next to the date column is for sorting the table order by the date. Data on the table grid are all extracted from the database through Entity Framework.</p>
