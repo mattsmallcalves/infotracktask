@@ -49,3 +49,9 @@
 <p>The graph shows the records of historical data in the database, it shows the daily positions of the website "infotrack.co.uk" when the keyword "land registry searches" are searched in both Google and Bing. Ideally, when the API program keeps running, a schedule task could set on both Windows or macOS environment to trigger the automation API call so that the system can get the figures and insert them into the database daily, for now it is using dummy data from the database to present. Only auto-inserted data or dummy data could be presented on the graph, data that was created by user triggering, would not be included in the graph. User can choose to view only one line by choosing the options in the dropdown list, or by clicking the coloured rectangle to remove the line.</p>
 <img src="assets/img/Grid.png" width="750" />
 <p>Every successfully retrieved data are stored in the table grid, the button next to the date column is for sorting the table order by the date. Data on the table grid are all extracted from the database through Entity Framework.</p>
+<h2>API</h2>
+<img src="assets/img/Swagger.png" width="750" />
+<p>There are 3 API created in back-end to handle business needs:</p>
+<ol><li>GET Method: History - It gets all the history data from the database.</li>
+<li>POST Method: Scrap - It scraps SEO ranking on user's request, and saves the record if the process is successful.</li>
+<li>POST Method: Automation - It scraps SEO ranking and save the record to the database, allowing data to be displayed in the front-end history graph. It is made to be paired with scheduled jobs.</li></ol>
