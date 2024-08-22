@@ -43,7 +43,9 @@ namespace infotrackbe.Services
             switch (searchEngine)
             {
                 case "Google":
-                    var googleClassRegex = new Regex(@"<div\b[^>]*>.*?<h3\b[^>]*>.*?<\/h3>.*?<a\b[^>]*>.*?<\/a>.*?<\/div>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                    //var googleClassRegex = new Regex(@"<div\b[^>]*>.*?<h3\b[^>]*>.*?<\/h3>.*?<a\b[^>]*>.*?<\/a>.*?<\/div>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                    var googleClassRegex = new Regex(@"(?<=<div class=""egMi0 kCrYT""><a href=""/url\?q=)[^""]*", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                    
                     var googleKeywordRegex = new Regex(@""+url, RegexOptions.Singleline | RegexOptions.IgnoreCase);
                     return [googleClassRegex, googleKeywordRegex];
                 case "Bing":
