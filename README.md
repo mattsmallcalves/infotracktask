@@ -33,7 +33,7 @@
 <h2>Using and Testing</h2>
 <p>To use the program, open at browser http://localhost:3000, the index page of the website will be presented.</p>
 <h4>SEO ranking look-up</h4>
-
+<img src="assets/img/index.png" width="750" />
 <p>The 3 input values have default values according to the scope of the project, but they are editable. Choosing 'Bing' in the dropdown list will get the SEO ranking from Bing. However, Bing would not show 100 results in the scraping process, it would only show 30. To Get the current SEO ranking, press the Submit button.</p>
 <img src="assets/img/Result1.png" width="750" />
 <img src="assets/img/Result2.png" width="750" />
