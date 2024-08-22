@@ -20,7 +20,7 @@ function SimpleNavBar(args) {
               <NavLink href="/">Search</NavLink>
             </NavItem>
             <NavItem className="mx-2">
-              <NavLink href="/records/">Records</NavLink>
+              <NavLink href="/history/">History</NavLink>
             </NavItem>
           </Nav>
         </Container>

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from "./component/Navbar/SimpleNavBar.js";
-import SearchFrom from "./view/Search.js";
+import SearchForm from "./view/Search.js";
 function App() {
   return (
     
@@ -9,7 +9,7 @@ function App() {
       <Navbar/>
       <header className="App-header">
         
-        <SearchFrom/>
+        <SearchForm/>
       </header>
     </div>
   );

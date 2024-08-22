@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Line } from 'react-chartjs-2';
+import { Container, Row, Col } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import Navbar from "../component/Navbar/SimpleNavBar.js";
+import HistoryTable from '../component/History/HistoryTable.js';
+import HistoryChart from '../component/History/HistoryChart.js';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,10 +15,7 @@ import {
   Legend,
   TimeScale
 } from 'chart.js';
-import 'chartjs-adapter-date-fns'; 
-import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Table } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from "../component/Navbar/SimpleNavBar.js";
+import 'chartjs-adapter-date-fns';
 
 ChartJS.register(
   CategoryScale,
@@ -24,7 +25,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  TimeScale 
+  TimeScale
 );
 
 function Records() {
@@ -36,7 +37,7 @@ function Records() {
     datasets: []
   });
   const [tableData, setTableData] = useState([]);
-  const [sortOrder, setSortOrder] = useState('asc'); 
+  const [sortOrder, setSortOrder] = useState('asc');
 
   useEffect(() => {
     fetch('http://localhost:5205/history')
@@ -61,8 +62,8 @@ function Records() {
   useEffect(() => {
     const filteredData = allData
       .filter(item => item.Keyword === 'land registry searches' &&
-                      item.Url === 'infotrack.co.uk' &&
-                      item.Display === 1);
+        item.Url === 'infotrack.co.uk' &&
+        item.Display === 1);
 
     const datasets = [];
     const datePositionMap = new Map();
@@ -89,8 +90,8 @@ function Records() {
         const dataset = {
           label: engine,
           data: positions,
-          borderColor: engine === 'Google' ? 'rgba(75,192,192,1)' : 'rgba(255,99,132,1)', 
-          backgroundColor: engine === 'Google' ? 'rgba(75,192,192,0.2)' : 'rgba(255,99,132,0.2)', 
+          borderColor: engine === 'Google' ? 'rgba(75,192,192,1)' : 'rgba(255,99,132,1)',
+          backgroundColor: engine === 'Google' ? 'rgba(75,192,192,0.2)' : 'rgba(255,99,132,0.2)',
           fill: true,
         };
 
@@ -125,97 +126,29 @@ function Records() {
     <div className="App">
       <Navbar />
       <div className="App-header">
+        <br/>
         <Container>
           <Row>
             <Col md={12}>
-              <h2>Ranking Trend</h2>
-              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-                <DropdownToggle caret>
-                  {selectedEngine}
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem onClick={() => setSelectedEngine('All')}>Show All</DropdownItem>
-                  <DropdownItem onClick={() => setSelectedEngine('Google')}>Google</DropdownItem>
-                  <DropdownItem onClick={() => setSelectedEngine('Bing')}>Bing</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-              <Line
-                data={filteredGraphData}
-                options={{
-                  responsive: true,
-                  plugins: {
-                    legend: {
-                      position: 'top',
-                    },
-                    tooltip: {
-                      callbacks: {
-                        label: function (context) {
-                          return `Position: ${context.raw}`;
-                        },
-                        title: function () {
-                          return '';
-                        }
-                      },
-                    },
-                  },
-                  scales: {
-                    x: {
-                      type: 'time',
-                      time: {
-                        unit: 'day',
-                        tooltipFormat: 'dd/MM/yyyy', 
-                      },
-                      title: {
-                        display: true,
-                        text: 'Date',
-                      },
-                      ticks: {
-                        autoSkip: true,
-                        maxTicksLimit: 10, 
-                      },
-                    },
-                    y: {
-                      title: {
-                        display: true,
-                        text: 'Rank',
-                      },
-                      suggestedMin: 1,
-                      suggestedMax: 100,
-                      reverse: true,
-                    },
-                  },
-                }}
+              <HistoryChart
+                filteredGraphData={filteredGraphData}
+                selectedEngine={selectedEngine}
+                dropdownOpen={dropdownOpen}
+                toggleDropdown={toggleDropdown}
+                setSelectedEngine={setSelectedEngine}
               />
             </Col>
           </Row>
-          <br/>
+          <br />
           <Row>
             <Col md={12}>
               <h3>History Records</h3>
-              <Table striped>
-                <thead>
-                  <tr>
-                    <th>Keyword</th>
-                    <th>URL</th>
-                    <th>Search Engine</th>
-                    <th>Positions</th>
-                    <th onClick={sortDataByDate} style={{ cursor: 'pointer' }}>
-                      Date {sortOrder === 'asc' ? '🔼' : '🔽'}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tableData.map((record, index) => (
-                    <tr key={index}>
-                      <td>{record.Keyword}</td>
-                      <td>{record.Url}</td>
-                      <td>{record.SearchEngine}</td>
-                      <td>{record.Position}</td>
-                      <td>{formatDate(record.CreatedDate)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
+              <HistoryTable
+                tableData={tableData}
+                sortDataByDate={sortDataByDate}
+                sortOrder={sortOrder}
+                formatDate={formatDate}
+              />
             </Col>
           </Row>
         </Container>
