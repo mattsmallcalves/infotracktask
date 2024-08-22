@@ -24,25 +24,5 @@ namespace infotrackbe.Controllers
         {
             return await _historyService.GetAllHistoriesAsync();
         }
-
-        
-
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] HistoryRequestModel model)
-        {
-            var history = new History
-            {
-                Id = Guid.NewGuid(),
-                Keyword = model.Keyword,
-                Url = model.Url,
-                SearchEngine = model.SearchEngine,
-                Positions = model.Positions,
-                Display = model.Display,
-                CreatedDate = DateTime.UtcNow
-            };
-
-            await _historyService.AddHistoryAsync(history);
-            return CreatedAtAction(nameof(Get), new { id = history.Id }, history);
-        }
     }
 }
