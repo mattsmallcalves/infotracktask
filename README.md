@@ -23,7 +23,7 @@
 <h4>Database</h4>
 <p>During development, SQL express is started in a docker container in a macOS machine, please change the connection string if needed, the connection string can be found in the .net project/appsettings.json: 
 </p>
-<p>  "DefaultConnection": "Server=tcp:127.0.0.1,1433;Database=InfoTrack;User Id=SA;Password=reallyStrongPwd123;Persist Security Info=False;Encrypt=False;"</p>
+<code style="background-color: lightyellow;"> "DefaultConnection": "Server=tcp:127.0.0.1,1433;Database=InfoTrack;User Id=SA;Password=reallyStrongPwd123;Persist Security Info=False;Encrypt=False;"</code>
 <p>Connection string is not encrypted, and there is no user id assignation for database access. This set-up is only for development purpose.</p>
 <p>Database set-up script could be found in the file infotrackbe/infotrackdatabase/DataBase.sql, execute the script and the following will be created:
 <ul><li>Database: InfoTrack</li>
@@ -31,7 +31,7 @@
 <li>Dummy Data for testing</li></ul></p>
 <br/>
 <h2>Using and Testing</h2>
-<p>To use the program, open at browser http://localhost:3000, the index page of the website will be presented.</p>
+<p>To use the program, open at browser <a href="http://localhost:3000">http://localhost:3000</a>, the index page of the website will be presented.</p>
 <h4>SEO ranking look-up</h4>
 <img src="assets/img/index.png" width="750" />
 <p>The 3 input values have default values according to the scope of the project, but they are editable. Choosing 'Bing' in the dropdown list will get the SEO ranking from Bing. However, Bing would not show 100 results in the scraping process, it would only show 30. To Get the current SEO ranking, press the Submit button.</p>
@@ -41,7 +41,7 @@
 <p>If the targeted website cannot be found in the searching in search engine, it will return "No Results To Display".</p>
 <p>Both successful results would be stored in the database, and would be presented in the table grid below.</p>
 <img src="assets/img/Cookie.png" width="750" />
-<p>Google has a strict access to automatically calling their url, fequent attempt would result to not being able to return any data. In that case, the result box would display "Cannot get data due to cookie restriction from Google".</p>
+<p>Google has a strict access to automatically calling their url, fequent attempt would result to not being able to return any data. In that case, the result box would display "Cannot get data due to cookie restriction from Google". If his message is shown, please wait for a short period of time before clicking the Submit button.</p>
 <h4>SEO history</h4>
 <p>The history tab could be accessed on the navbar, click Records in the navbar.</p>
 <p>2 sections would be shown in the record page: history graph and history table.</p>
@@ -55,3 +55,14 @@
 <ol><li>GET Method: History - It gets all the history data from the database.</li>
 <li>POST Method: Scrap - It scraps SEO ranking on user's request, and saves the record if the process is successful.</li>
 <li>POST Method: Automation - It scraps SEO ranking and save the record to the database, allowing data to be displayed in the front-end history graph. It is made to be paired with scheduled jobs.</li></ol>
+<h2>Additional Material</h2>
+<p>Setting up the scheduled jobs is not necessary in this project, it is a nice to have feature in a practical environment, in which every components of this project are set inside one local enviornment. Here are some simple suggestions for schedule jobs settings:</p>
+<h4>Windows Powershell Script and Task Scheduler</h4>
+<p>The Powershell script is located in the additionalScript/Windows folder, locate the file, and follow this guide to set up task scheduler: <a href="https://sqlbackupandftp.com/blog/how-to-schedule-a-script-via-windows-task-scheduler/">Task Scheduler Set-Up</a></p>
+<h4>'macOS Shell Script and launchd</h4>
+<p>The scripts are located in the additionalScript/macOS. The api_call.sh file is the executable file, whereas the com.infotrack.api_call.plist file is the launchd schedule instruction script.</p>
+<p>Locate the api_call.sh file and type this command to make it executable <code style="background-color: lightyellow;"><em>chmod +x /path/to/api_call.sh</em></code></p>
+<p>Place the plist file com.infotrack.api_call.plist to this location: ~/Library/LaunchAgents/, replace the path of .sh file in the plist file if necessary.</p>
+<p>Load the file with this command: <code style="background-color: lightyellow;"><em>launchctl bootstrap gui/{your-user-id} com.infotrack.api_call.plist</em></code>, replace your user id in the command.</p>
+<p>A detailed reference could be found here: <a href="https://davidhamann.de/2018/03/13/setting-up-a-launchagent-macos-cron/">macOS Cronjob Set-Up</a></p>
+<p>Both jobs are now scheduled to run at 1am everyday to scrap and load data.</p>
