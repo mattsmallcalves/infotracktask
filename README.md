@@ -60,7 +60,7 @@
 <p>Setting up the scheduled jobs is not necessary in this project, it is a nice to have feature in a practical environment, in which every components of this project are set inside one local enviornment. Here are some simple suggestions for schedule jobs settings:</p>
 <h4>Windows Powershell Script and Task Scheduler</h4>
 <p>The Powershell script is located in the additionalScript/Windows folder, locate the file, and follow this guide to set up task scheduler: <a href="https://sqlbackupandftp.com/blog/how-to-schedule-a-script-via-windows-task-scheduler/">Task Scheduler Set-Up</a></p>
-<h4>'macOS Shell Script and launchd</h4>
+<h4>macOS Shell Script and launchd</h4>
 <p>The scripts are located in the additionalScript/macOS. The api_call.sh file is the executable file, whereas the com.infotrack.api_call.plist file is the launchd schedule instruction script.</p>
 <p>Locate the api_call.sh file and type this command to make it executable <code style="background-color: lightyellow;"><em>chmod +x /path/to/api_call.sh</em></code></p>
 <p>Place the plist file com.infotrack.api_call.plist to this location: ~/Library/LaunchAgents/, replace the path of .sh file in the plist file if necessary.</p>
