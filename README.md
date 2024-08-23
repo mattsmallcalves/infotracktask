@@ -1,23 +1,23 @@
 <h2>Welcome</h2>
-<p>This project is for tracking Google SEO ranking by scraping Google URL </p>
+<p>This project is for tracking Google SEO ranking by scraping Google URL. </p>
 <p>In this project, react.js is used as front-end, and .NET 8 is used as back-end, SQL Express is also used as the database to store historical data/ dummy data.</p>
 <h2>Prerequisite</h2>
 <ul><li>Both front-end and back-end solutions are implemented through Visual Studio Code, the set-up tutorial would use macOS terminal.  Windows users should run similar commands. </li>
 <li>SQL Express uses SSMS to store dummy data, for complete experience, please make sure SSMS and SQL Express are installed.</li></ul>
 <h2>Set-up</h2>
-<p>Please make sure everything is running before starting to test the systems</p>
+<p>Please make sure everything is running before starting to test the systems.</p>
 <h4>Node.js and npm</h4>
 <p>Please proceed to install node.js and npm in the following link: <a href="https://nodejs.org/en/download/prebuilt-installer"> Download Nodejs and npm </a></p>
-<p>After installing node.js and npm, and cloning the project, open terminal and locate the directory: infotrackfe </p>
-<p>Enter the command: <code style="background-color: lightyellow;"><em>npm start</em></code></p>
+<p>After installing node.js and npm, and cloning the project, open terminal and locate the directory /infotrackfe. </p>
+<p>Enter the command: <code style="background-color: lightyellow;"><em>npm start</em></code>.</p>
 <img src="assets/img/react1.png" width="750" />
 <p>The react project will start now, when it is running, the command panel will show messages:</p>
 <img src="assets/img/react2.png" width="750" />
-<p>macOS user might encounter an error message that says 'Can't Be Opened Because Apple Cannot Check It for Malicious Software', to bypass security, use this command: <code style="background-color: lightyellow;"><em>sudo spctl --master-disable</em></code>. To enable the security after finished using the program, use this command: <code style="background-color: lightyellow;"><em>sudo spctl --master-enable</em></code>. For further details please refer to: <a href="https://iboysoft.com/howto/apple-cannot-check-it-for-malicious-software.html">macOS security issue</a> </p>
+<p>macOS user might encounter an error message that says 'Can't Be Opened Because Apple Cannot Check It for Malicious Software', to bypass security, use this command: <code style="background-color: lightyellow;"><em>sudo spctl --master-disable</em></code>. To enable the security after finished using the program, use this command: <code style="background-color: lightyellow;"><em>sudo spctl --master-enable</em></code>. For further details please refer to: <a href="https://iboysoft.com/howto/apple-cannot-check-it-for-malicious-software.html">macOS security issue</a>.</p>
 <h4>.NET8</h4>
 <p>The back-end project uses .NET8. Make sure .NET8 is installed, SDK link can be found here: <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">Download .NET8 SDK </a></p>
-<p>Open terminal and locate the directory: infotrackbe</p>
-<p>Enter the command: <code style="background-color: lightyellow;"><em>dotnet run</em></code></p>
+<p>Open terminal and locate the directory /infotrackbe.</p>
+<p>Enter the command: <code style="background-color: lightyellow;"><em>dotnet run</em></code>.</p>
 <img src="assets/img/dotnet1.png" width="750" />
 <p>The react project will start now, when it is running, the command panel will show messages:</p>
 <img src="assets/img/dotnet2.png" width="750" />
